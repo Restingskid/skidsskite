@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Register - skids.rest{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 500px; margin: 100px auto; padding: 30px; background: #1a1a1a; border-radius: 10px;">
+    <h1 style="text-align: center; color: #ff69b4; margin-bottom: 30px;">Create Account</h1>
+    
+    <form method="POST" action="{{ url_for('register') }}">
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; color: #fff; margin-bottom: 5px;">Username</label>
+            <input type="text" name="username" required 
+                   style="width: 100%; padding: 10px; background: #2a2a2a; border: 1px solid #444; color: #fff; border-radius: 5px;"
+                   minlength="3" maxlength="50">
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; color: #fff; margin-bottom: 5px;">Email (optional)</label>
+            <input type="email" name="email" 
+                   style="width: 100%; padding: 10px; background: #2a2a2a; border: 1px solid #444; color: #fff; border-radius: 5px;">
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; color: #fff; margin-bottom: 5px;">Password</label>
+            <input type="password" name="password" required 
+                   style="width: 100%; padding: 10px; background: #2a2a2a; border: 1px solid #444; color: #fff; border-radius: 5px;"
+                   minlength="6">
+        </div>
+        
+        <button type="submit" 
+                style="width: 100%; padding: 12px; background: #ff69b4; color: #fff; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+            Register
+        </button>
+    </form>
+    
+    <p style="text-align: center; color: #888; margin-top: 20px;">
+        Already have an account? <a href="{{ url_for('login') }}" style="color: #ff69b4;">Login here</a>
+    </p>
+</div>
+{% endblock %}
